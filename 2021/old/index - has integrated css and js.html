@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<title>Countdown to end of school 2021!</title>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  background-image: url('wallpaper.jpg');
+  background-repeat: no-repeat;
+}
+
+h1 {
+  font-size: 105px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin-top: 0px;
+  color: red;
+  font-family:ms gothic;
+}
+
+p {
+  font-size: 35px;
+  text-align: center;
+  margin-top: 0px;
+  color: lime;
+  font-family:ms gothic;
+}
+
+div {
+  position: fixed;
+  left: 50%;
+  bottom: -30px;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+}
+</style>
+</head>
+<body>
+
+<h1 id="countdown"></h1>
+<div>
+<p>Countdown to end of school for the year!</p>
+</div>
+
+<script>
+var countDownDate = new Date("Dec 1, 2021 15:15:00").getTime();
+
+var x = setInterval(function() {
+
+  var now = new Date().getTime();
+    
+  var distance = countDownDate - now;
+    
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "SCHOOL IS DONE FOR 2021!!";
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
